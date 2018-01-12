@@ -1,0 +1,35 @@
+DATA ANALYSIS IN PYTHON (REFERENCES & RESOURCES WEB)
+  http://www.data-analysis-in-python.org/index.html
+
+  """This site is designed to offer an introduction to Python specifically tailored for social scientists and people doing applied data analysis – users with little or no serious programming experience who just want to get things done, and who have experience with programs like R and Stata but are anxious for something better."""
+  
+
+MACHINE LEARNING IS FUN TUTORIAL (WEB TUTORIAL)
+  https://medium.com/@ageitgey/machine-learning-is-fun-80ea3ec3c471
+  https://medium.com/@ageitgey/machine-learning-is-fun-part-2-a26a10b68df3
+  https://medium.com/@ageitgey/machine-learning-is-fun-part-3-deep-learning-and-convolutional-neural-networks-f40359318721
+  https://medium.com/@ageitgey/machine-learning-is-fun-part-4-modern-face-recognition-with-deep-learning-c3cffc121d78
+  https://medium.com/@ageitgey/machine-learning-is-fun-part-5-language-translation-with-deep-learning-and-the-magic-of-sequences-2ace0acca0aa
+  https://medium.com/@ageitgey/machine-learning-is-fun-part-6-how-to-do-speech-recognition-with-deep-learning-28293c162f7a
+  https://medium.com/@ageitgey/abusing-generative-adversarial-networks-to-make-8-bit-pixel-art-e45d9b96cee7
+  https://medium.com/@ageitgey/machine-learning-is-fun-part-8-how-to-intentionally-trick-neural-networks-b55da32b7196  
+  https://www.lynda.com/Data-Science-tutorials/Machine-Learning-Essential-Training-Value-Estimations/548594-2.html?lpk35=9149&utm_medium=ldc-partner&utm_source=CMPRC&utm_content=524&utm_campaign=CD20575&bid=524&aid=CD20575
+  
+  """This guide is for anyone who is curious about machine learning but has no idea where to start. I imagine there are a lot of people who tried reading the wikipedia article, got frustrated and gave up wishing someone would just give them a high-level explanation. That’s what this is."""
+  
+
+PYTHON MACHINE LEARNING (LEARNING BOOK)
+  http://www.zhanjunlang.com/resources/tutorial/Python%20Machine%20Learning.pdf
+  
+  """Unlock deeper insights into machine learning with this vital guide to cutting-edge predictive analytics"
+  
+  
+PYTHON FOR DATA ANALYSIS
+  https://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&ved=0ahUKEwjC2PaGhtLYAhVDXRQKHbBtDa4QFggnMAA&url=http%3A%2F%2Fforum.myquant.cn%2Fuploads%2Fdefault%2Foriginal%2F1X%2Fd87be13e0e121369e22b59cb6d74d295f7e8a04e.pdf&usg=AOvVaw2LgeifT164b8XrksfGs0I1
+  
+  """This book is concerned with the nuts and bolts of manipulating, processing, cleaning,
+and crunching data in Python. It is also a practical, modern introduction to scientific
+computing in Python, tailored for data-intensive applications. This is a book about the
+parts of the Python language and libraries you’ll need to effectively solve a broad set of
+data analysis problems. This book is not an exposition on analytical methods using
+Python as the implementation language"""
