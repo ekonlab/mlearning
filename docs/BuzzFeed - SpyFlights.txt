@@ -1,0 +1,19 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 BuzzFeed article - Introducci\'f3n y noticia general\
+{\field{\*\fldinst{HYPERLINK "https://www.buzzfeed.com/peteraldhous/hidden-spy-planes?utm_term=.ewKavMJbkb#.giZ39VMLGL"}}{\fldrslt https://www.buzzfeed.com/peteraldhous/hidden-spy-planes?utm_term=.ewKavMJbkb#.giZ39VMLGL}}\
+\
+FuzzFeed article - Mapas y gr\'e1fica del dataset\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+{\field{\*\fldinst{HYPERLINK "https://www.buzzfeed.com/peteraldhous/spies-in-the-skies?utm_term=.ixG5Q4D6L6#.rnWrykpR8R"}}{\fldrslt \cf0 https://www.buzzfeed.com/peteraldhous/spies-in-the-skies?utm_term=.ixG5Q4D6L6#.rnWrykpR8R}}\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \
+BuzaFeed githb - Art\'edculo t\'e9cnico, dataset y c\'f3digo en R\
+{\field{\*\fldinst{HYPERLINK "https://buzzfeednews.github.io/2017-08-spy-plane-finder/"}}{\fldrslt https://buzzfeednews.github.io/2017-08-spy-plane-finder/}}\
+\
+}
