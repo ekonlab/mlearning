@@ -1,0 +1,3 @@
+[submodule "flightsscrapper"]
+	path = flightsscrapper
+	url = git@github.com:orzocogorzo/flightsscrapper.git
