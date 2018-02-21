@@ -1,3 +1,6 @@
 [submodule "flightsscrapper"]
 	path = flightsscrapper
 	url = git@github.com:orzocogorzo/flightsscrapper.git
+[submodule "flights/scrapper"]
+	path = flights/scrapper
+	url = git@github.com:orzocogorzo/flightsscrapper.git
