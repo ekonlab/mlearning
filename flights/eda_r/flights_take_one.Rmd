@@ -19,7 +19,7 @@ library(tidyr)
 library(ggmap)
 library(ggplot2)
 
-setwd("/Users/albertogonzalez/Documents/GitHub/mlearning/flights")
+setwd("/Users/albertogonzalez/Documents/GitHub/mlearning/flights/eda_r")
 list.files()
 
 # Load first file
@@ -31,7 +31,7 @@ df = do.call("rbind.fill", lapply(input_file, as.data.frame))
 str(df)
 
 # Get needed variables
-df_1 = df[,c("adshex","flight_id","lat","lng","alt","speed","squawk","type","timestamp","track","s_airport","t_airport")]
+df_1 = df[,c("adshex","flight_id","lat","lng","alt","speed","squawk","type","IATA","timestamp","track","s_airport","t_airport")]
 str(df_1)
 summary(df_1)
 ```
