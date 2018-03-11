@@ -31,7 +31,7 @@ df = do.call("rbind.fill", lapply(input_file, as.data.frame))
 str(df)
 
 # Get needed variables
-df_1 = df[,c("adshex","flight_id","lat","lng","alt","speed","squawk","type","IATA","timestamp","track","s_airport","t_airport")]
+df_1 = df[,c("adshex","flight_id","lat","lng","alt","speed","squawk","type","IATA","timestamp","track","s_airport","t_airport","OACI")]
 str(df_1)
 summary(df_1)
 ```

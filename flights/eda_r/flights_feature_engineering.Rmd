@@ -1,0 +1,163 @@
+---
+title: "flights_feature_engineering"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Feature Engineering
+For each flight:
+_steer Change in compass bearing from the previous transponder detection for that aircraft; negative values indicate a turn to the left, positive values a turn to the right
+_duration of each flight segment recorded by Flightradar24, in minutes.
+_boxes Area of a rectangular bounding box drawn around each flight segment, in square kilometers
+
+```{r message=FALSE}
+# Load packages and set working directory
+library(rjson)
+library(dplyr)
+library(tidyr)
+library(ggmap)
+library(ggplot2)
+library(lubridate)
+library(anytime)
+library(sp)
+library(tmaptools)
+library(SpatialEpi)
+library(Imap)
+
+setwd("/Users/albertogonzalez/Documents/GitHub/mlearning/flights/eda_r")
+list.files()
+
+```
+
+```{r message=FALSE}
+# Read input data
+input_file =read.csv(file = "flights_output_take_one.csv")
+head(input_file)
+
+```
+
+# Initial calculations per one flight
+
+```{r message=FALSE}
+# Calculate duration: For each flight:
+# duration of each flight segment recorded by Flightradar24, in minutes.
+# flight_id = flight segment
+
+# Select one flight
+# Number of unique flights
+u_flights = unique(input_file$adshex)
+length(u_flights)
+head(u_flights)
+
+# Filter one and plot it (lat - lon)
+one_flight = input_file %>%
+  filter(adshex=="10534350")
+
+str(one_flight)
+head(one_flight)
+
+# Flight segments per flight
+segments = as.data.frame(table(one_flight$flight_id)) %>%
+  arrange(desc(Freq)) %>% 
+  head
+
+segments
+
+# Max and min timestamp
+init = min(one_flight$timestamp)
+init = anytime(init)
+
+end = max(one_flight$timestamp)
+end = anytime(end)
+dura = difftime(end,init,units="mins")
+dura
+
+```
+  
+# Count of segments per aircraft
+
+```{r message=FALSE}
+segment_per_aircraft = input_file %>%
+  group_by(adshex,flight_id) %>%
+  summarise(n = n())
+
+se = as.data.frame(segment_per_aircraft)
+
+```
+
+
+
+```{r message=FALSE}
+# Calculate boxes: For each flight:
+# boxes Area of a rectangular bounding box drawn around each flight segment, in square kilometers
+bbox <- make_bbox(lon = one_flight$lng, lat = one_flight$lat, f = .1)
+bbox
+
+# Extract lon - lat
+xy <- one_flight[,c(3,4)]
+
+# Convert into spatial
+# spdf <- SpatialPointsDataFrame(coords = xy, data = one_flight,
+#                                proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
+# 
+# class(spdf)
+# 
+# spat = SpatialPolygonsDataFrame(xy)
+# 
+# 
+# # Calculate area in sq2
+# area = approx_areas(spdf,target = "metric")
+
+min_coord = head(xy,1)
+max_coord = tail(xy,1)
+
+coords = data.frame(rbind(min_coord,max_coord))
+# area = latlong2grid(coords)
+# area
+
+area_meters = gdist(min_coord$lng,min_coord$lat,max_coord$lng,max_coord$lat, units = "m", a = 6378137.0, b = 6356752.3142, verbose = FALSE)
+
+area_km2 = area_meters / 1000
+area_km2
+
+```
+
+
+
+```{r message=FALSE}
+# Calculate steer: change in compass from previous transponder
+# Calculated over track
+head(one_flight)
+steer = diff(one_flight$track)
+head(steer,10)
+
+```
+
+
+# Select 500 random flights to perform calculations
+
+
+```{r message=FALSE}
+head(input_file)
+sample_df = sample_n(input_file, 500)
+str(sample_df)
+
+```
+
+# Perform calculations for the 500 random selected flights
+
+```{r message=FALSE}
+# Duration
+dura_df = sample_df %>%
+  group_by(adshex) %>%
+  summarize(min_time = min(timestamp),max_time = max(timestamp))
+
+head(dura_df)
+
+
+```
+
+
