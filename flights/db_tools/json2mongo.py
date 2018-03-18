@@ -1,4 +1,5 @@
-import os
+from os import listdir, path, getcwd
+from shutil import move
 import simplejson as json
 from pymongo import MongoClient
 import time
@@ -13,11 +14,14 @@ def load_files(files,counter):
   for file_name in files[:5]:
     i += 1
     counter["index"] += 1
-    fl = open(file_name)
+    fl = open('./jsons/'+file_name)
     data += [delete_old_ids(d) for d in json.load(fl)]
     #geodata += [json2geojson(data, file_name)]
     print('loading file: ' + file_name + ' - ' + str(counter["index"]) + '/' + str(counter["len"]));
     fl.close()
+    dist_path = path.join(path.abspath(path.join(getcwd(),'..')),'Escritorio/.backup')
+    if not path.isfile(path.join(dist_path,file_name)):
+      move('./jsons/'+file_name, dist_path)
   
   files = files[5:]
   return data, files
@@ -61,7 +65,7 @@ def delete_old_ids(d):
 
 
 def json2mongo():
-  files = os.listdir()
+  files = listdir("jsons")
   coll, geocoll = setup_db_connection()
   counter = {
     "index": 0,
