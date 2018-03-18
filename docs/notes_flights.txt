@@ -18,3 +18,6 @@ https://github.com/BuzzFeedNews/2017-08-spy-plane-finder
 1 mt = 0.000001 km2
 N mt = x km2
 
+1km2 = 1000 mt
+xkm2 = 650.000 mt
+

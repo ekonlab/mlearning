@@ -61,7 +61,7 @@ head(one_flight)
 
 # Flight segments per flight
 segments = as.data.frame(table(one_flight$flight_id)) %>%
-  arrange(desc(Freq)) %>% 
+  arrange(desc(Freq)) %>%
   head
 
 segments
@@ -76,7 +76,7 @@ dura = difftime(end,init,units="mins")
 dura
 
 ```
-  
+
 # Count of segments per aircraft
 
 ```{r message=FALSE}
@@ -102,12 +102,12 @@ xy <- one_flight[,c(3,4)]
 # Convert into spatial
 # spdf <- SpatialPointsDataFrame(coords = xy, data = one_flight,
 #                                proj4string = CRS("+proj=longlat +datum=WGS84 +ellps=WGS84 +towgs84=0,0,0"))
-# 
+#
 # class(spdf)
-# 
+#
 # spat = SpatialPolygonsDataFrame(xy)
-# 
-# 
+#
+#
 # # Calculate area in sq2
 # area = approx_areas(spdf,target = "metric")
 
@@ -159,9 +159,3 @@ head(dura_df)
 
 
 ```
-
-
-
-
-
-
